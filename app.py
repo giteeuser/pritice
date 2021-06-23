@@ -11,13 +11,12 @@ import csv, re, operator
 app = Flask(__name__)
 
 person = {
-    'first_name': 'Nohossat',
-    'last_name' : 'TRAORE',
-    'address' : '9 rue Léon Giraud · PARIS · FRANCE',
+    'name' : '萝卜',
+    'address' : 'Wuhan, Hubei',
     'job': 'Web developer',
     'tel': '0678282923',
-    'email': 'nohossat.tra@yahoo.com',
-    'description' : 'Suite à une expérience internationale en développement web et dans le domaine des arts, l’impact de l’intelligence artificielle dans nos vies me surprend de jour en jour. \n Aujourd’hui, je souhaite changer de cap et comprendre les secrets que recèlent nos données. J’aimerais mettre à profit ces découvertes au service des entreprises/associations à dimension sociale.',
+    'email': 'whiteluobu.com',
+    'description' : '本人有着较强的沟通表达能力，对工作有上进心、认真负责、待人真诚、处人随和!换位思考有自己独特的想法这是我的优点，并且我多才多艺，我相信我能胜任任何工作!我理想就是能实现我的个人价值的挖掘，能让我的价值得到实现，同时实现企业利润和价值的化。从基层做起，不断学习，一点一滴积累经验，努力提升自我。丛基层技术做起，向管理层迈进。',
     'social_media' : [
         {
             'link': 'https://www.facebook.com/nono',
@@ -39,25 +38,25 @@ person = {
     'img': 'img/img_nono.jpg',
     'experiences' : [
         {
-            'title' : 'Web Developer',
-            'company': 'AZULIK',
+            'title' : 'Web Design',
+            'company': 'Fiserv',
             'description' : 'Project manager and lead developer for several AZULIK websites.',
-            'timeframe' : 'July 2018 - November 2019'
+            'timeframe' : 'Apr 2018 - Now'
         },
         {
-            'title' : 'Freelance Web Developer',
-            'company': 'Independant',
+            'title' : 'Web Designer',
+            'company': 'Lynden',
             'description' : 'Create Wordpress websites for small and medium companies. ',
-            'timeframe' : 'February 2017 - Present'
+            'timeframe' : 'Jan 2018 - Apr 2018'
         },
         {
-            'title' : 'Sharepoint Intern',
-            'company': 'ALTEN',
+            'title' : 'Intern - Web Design',
+            'company': 'Lynden',
             'description' : 'Help to manage a 600 Sharepoint sites platform (audit, migration to Sharepoint newer versions)',
-            'timeframe' : 'October 2015 - October 2016'
+            'timeframe' : 'Aug 2017 - Dec 2017'
         }
     ],
-    'education' : [
+    'educations' : [
         {
             'university': 'Paris Diderot',
             'degree': 'Projets informatiques et Startégies d\'entreprise (PISE)',
