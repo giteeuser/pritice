@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="../static/js/font.js"></script>
+</head>
+
+<body style="font-family:arial, sans-serif">
+	<h1>抽烟分析</h1>
+	等密度线图：
+	<div id="tips" class="tips"></div>
+	并行类别图：<br />
+	<div id="tips1" class="tips1"></div>
+	箱型图:
+	<div id="tips2" class="tips2"></div>
+	多重属性的柱状图：
+	<div id="tips3" class="tips3"></div>
+	直方图:
+	<div id="tips4" class="tips4"></div>
+</body>
+<script>
+    d = {{ graphJSON | safe }};
+    Plotly.newPlot('tips', d, {});
+	c = {{ graphJSON1 | safe }};
+	Plotly.newPlot('tips1', c, {});
+	b = {{ graphJSON2 | safe }};
+	Plotly.newPlot('tips2', b, {});
+	a = {{ graphJSON3 | safe }};
+	Plotly.newPlot('tips3', a, {});
+	e = {{ graphJSON4 | safe }};
+	Plotly.newPlot('tips4', e, {});
+</script>
+
+</html>

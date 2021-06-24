@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="../static/js/font.js"></script>
+    <script>
+        function cb(selection) {
+            $.getJSON({
+                url: "/callback", data: { 'data': selection }, success: function (result) {
+                    Plotly.newPlot('chart1', result, {});;
+                }
+            });
+        }
+    </script>
+</head>
+
+<body style="font-family:arial, sans-serif">
+    <h1>1949-1960年的每月的游客量</h1>
+    <h2>输入月份如：12个月份（大写字母开头,英文输入）</h2>
+    <div id="chart" class="chart"></div>
+	请输入月份：<input type="text" id="fname" name="fname" onchange="cb(this.value)">
+	<div id="chart1" class="chart1"></div>
+</body>
+<script>
+    d = {{ graphJSON | safe }};
+    Plotly.newPlot('chart', d, {});
+	c = {{ graphJSON1 | safe }};
+	Plotly.newPlot('chart1', c, {});
+</script>
+
+</html>

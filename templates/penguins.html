@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="../static/js/font.js"></script>
+<!--   <script>
+        function cd(selection) {
+            $.getJSON({
+                url: "/callback", data: { 'data': selection }, success: function (result) {
+                    Plotly.newPlot('tips1', result, {});;
+                }
+            });
+        }
+    </script> -->
+</head>
+
+<body style="font-family:arial, sans-serif">
+	<h1>penguins分析</h1>
+	等密度线图：
+	<div id="penguins" class="penguins"></div>
+	<div id="penguins1" class="penguins11"></div>
+</body>
+<script>
+	a = {{ graphJSON | safe }};
+	Plotly.newPlot('penguins', a, {});
+	b = {{ graphJSON1 | safe }};
+	Plotly.newPlot('penguins1', b, {});
+</script>
+
+</html>
