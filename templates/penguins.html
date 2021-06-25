@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="../static/js/plotly-latest.min.js"></script>
     <script src="../static/js/font.js"></script>
 <!--   <script>
         function cd(selection) {
@@ -19,26 +19,26 @@
 	<h1>penguins分析</h1>
 	等密度线图：
 	<div id="penguins" class="penguins"></div>
-	气泡图:
+<!-- 	气泡图:
 	<div id="penguins1" class="penguins1"></div>
 	小提琴图:
 	<div id="penguins2" class="penguins2"></div>
 	散点极坐标:
 	<div id="penguins3" class="penguins3"></div>
 	散点+直方图：
-	<div id="penguins4" class="penguins4"></div>
+	<div id="penguins4" class="penguins4"></div> -->
 </body>
 <script>
 	a = {{ graphJSON | safe }};
 	Plotly.newPlot('penguins', a, {});
-	b = {{ graphJSON1 | safe }};
-	Plotly.newPlot('penguins1', b, {});
-	c = {{ graphJSON2 | safe }};
-	Plotly.newPlot('penguins2', c, {});
-	d = {{ graphJSON3 | safe }};
-	Plotly.newPlot('penguins3', d, {});
-	e = {{ graphJSON4 | safe }};
-	Plotly.newPlot('penguins4', e, {});
-</script>
+// 	b = {{ graphJSON1 | safe }};
+// 	Plotly.newPlot('penguins1', b, {});
+// 	c = {{ graphJSON2 | safe }};
+// 	Plotly.newPlot('penguins2', c, {});
+// 	d = {{ graphJSON3 | safe }};
+// 	Plotly.newPlot('penguins3', d, {});
+// 	e = {{ graphJSON4 | safe }};
+// 	Plotly.newPlot('penguins4', e, {});
+// </script>
 
 </html>
