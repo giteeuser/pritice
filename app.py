@@ -168,7 +168,7 @@ def sm4():
 #
 @app.route('/penguins')
 def penguins():
-	return render_template('penguins.html',  graphJSON=pu(),graphJSON1=pu1())
+	return render_template('penguins.html',  graphJSON=pu(),graphJSON1=pu1(),graphJSON2=pu2(),graphJSON3=pu3(),graphJSON4=pu4())
 def pu():
 	df = pd.read_csv(r"static/penguins.csv")
 	fig = px.bar_polar(df,r="flipper_length_mm",theta="body_mass_g",color="sex",template="plotly_dark"
@@ -181,6 +181,26 @@ def pu1():
 		   ,color="species"  # 区分颜色
 		   ,size="body_mass_g"   # 区分圆的大小
 		   )
+	graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+	return graphJSON
+def pu2():
+	df = pd.read_csv(r"static/penguins.csv")
+	fig = px.violin(df,x="island",y="flipper_length_mm",color="sex",box=True#显示内部箱体
+		,points="all",hover_data=df.columns#结果中显示全部数据
+		)
+	graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+	return graphJSON
+
+def pu3():
+	df = pd.read_csv(r"static/penguins.csv")
+	fig = px.scatter_polar(df,r="flipper_length_mm",theta="body_mass_g",color="island",symbol="island"
+					  ,color_discrete_sequence=px.colors.sequential.Plasma_r)
+	graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+	return graphJSON
+def pu4():
+	df = pd.read_csv(r"static/penguins.csv")
+	fig = px.scatter(df,x="bill_depth_mm",y="bill_length_mm",color="species",marginal_x="box",
+		  marginal_y="histogram",height=600,trendline="ols",template="plotly_white")
 	graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 	return graphJSON
 
