@@ -198,12 +198,12 @@ def pu2():
 	graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 	return graphJSON
 
-# def pu3():
-# 	df = pd.read_csv(r"static/penguins.csv")
-# 	fig = px.scatter_polar(df,r="flipper_length_mm",theta="body_mass_g",color="island",symbol="island"
-# 					  ,color_discrete_sequence=px.colors.sequential.Plasma_r)
-# 	graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-# 	return graphJSON
+def pu3():
+	df = pd.read_csv(r"static/penguins.csv")
+	fig = px.scatter_polar(df,r="flipper_length_mm",theta="body_mass_g",color="island",symbol="island"
+					  ,color_discrete_sequence=px.colors.sequential.Plasma_r)
+	graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+	return graphJSON
 
 # def pu4():
 # 	df = pd.read_csv(r"static/penguins.csv")
