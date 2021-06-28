@@ -207,8 +207,7 @@ def pu3():
 
 def pu4():
 	df = pd.read_csv(r"static/penguins.csv")
-	fig = px.scatter(df,x="bill_depth_mm",y="bill_length_mm",color="species",marginal_x="box",
-		  marginal_y="histogram",height=600,trendline="ols",template="plotly_white")
+	fig = px.scatter_matrix(df,dimensions=["bill_length_mm","bill_depth_mm","flipper_length_mm","body_mass_g"],color="species")
 	graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 	return graphJSON
 
