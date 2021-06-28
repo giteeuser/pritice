@@ -171,8 +171,8 @@ def penguins():
 	return render_template('penguins.html',  graphJSON=pu()
 		,graphJSON1=pu1()
 		,graphJSON2=pu2()
-		# ,graphJSON3=pu3()
-		# ,graphJSON4=pu4()
+		,graphJSON3=pu3()
+		,graphJSON4=pu4()
 		)
 def pu():
 	df = pd.read_csv(r"static/penguins.csv")
@@ -205,12 +205,12 @@ def pu3():
 	graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 	return graphJSON
 
-# def pu4():
-# 	df = pd.read_csv(r"static/penguins.csv")
-# 	fig = px.scatter(df,x="bill_depth_mm",y="bill_length_mm",color="species",marginal_x="box",
-# 		  marginal_y="histogram",height=600,trendline="ols",template="plotly_white")
-# 	graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-# 	return graphJSON
+def pu4():
+	df = pd.read_csv(r"static/penguins.csv")
+	fig = px.scatter(df,x="bill_depth_mm",y="bill_length_mm",color="species",marginal_x="box",
+		  marginal_y="histogram",height=600,trendline="ols",template="plotly_white")
+	graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+	return graphJSON
 
 @app.route('/senti')
 def main():

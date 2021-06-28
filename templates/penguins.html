@@ -25,8 +25,8 @@
 	<div id="penguins2" class="penguins2"></div>
 	散点极坐标:
 	<div id="penguins3" class="penguins3"></div>
-	<!-- 散点+直方图： -->
-	<!-- <div id="penguins4" class="penguins4"></div> -->
+	散点+直方图：
+	<div id="penguins4" class="penguins4"></div>
 </body>
 <script>
 	a = {{ graphJSON | safe }};
@@ -37,8 +37,8 @@
 	Plotly.newPlot('penguins2', c, {});
 	d = {{ graphJSON3 | safe }};
 	Plotly.newPlot('penguins3', d, {});
-// 	e = {{ graphJSON4 | safe }};
-// 	Plotly.newPlot('penguins4', e, {});
-// </script>
+	e = {{ graphJSON4 | safe }};
+	Plotly.newPlot('penguins4', e, {});
+</script>
 
 </html>
