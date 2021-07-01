@@ -4,29 +4,45 @@
     <meta charset="UTF-8">
     <script src="../static/js/plotly-latest.min.js"></script>
     <script src="../static/js/font.js"></script>
-<!--   <script>
-        function cd(selection) {
-            $.getJSON({
-                url: "/callback", data: { 'data': selection }, success: function (result) {
-                    Plotly.newPlot('tips1', result, {});;
-                }
-            });
-        }
-    </script> -->
 </head>
 
 <body style="font-family:arial, sans-serif">
 	<h1>penguins分析</h1>
 	柱状极坐标图：
 	<div id="penguins" class="penguins"></div>
+	<p>	1、此图描述了男女企鹅的不同的身长以及体重。</p>
+	<p>	2、图中可看出女性企鹅的体重比男企鹅的体重要高。</p>
+	<p>	3、图中可看出体长在225到270之间的体重较低，体长在180到
+	225之间的体重最高，其体重的最大值达到了2000g以上。</p>
+	<hr >
 	气泡图:
 	<div id="penguins1" class="penguins1"></div>
+	<p>	该图是以企鹅的喙的长宽度以及企鹅的种类做参数所绘制的图，其
+	中的气泡可明显的Adelie的企鹅喙长度短但是宽度长，而Gentoo的
+	企鹅喙长度长了但是其喙宽度较短；Chinstrap种类的企鹅相比较于
+	其他种类的企鹅喙的长度以及宽度相对适中。</p>
+	<hr >
 	小提琴图:
 	<div id="penguins2" class="penguins2"></div>
-	散点极坐标:
+	<p>	1、小提琴图中间的黑色粗条用来显示四分位数。黑色粗条中间的白点表示
+	中位数，粗条的顶边和底边分别表示上四分位数和下四分位数，通过边
+	的位置所对应的y轴的数值就可以看到四分位数的值。</p>
+	<p>	2、由黑色粗条延伸出的黑细线表示95%的置信区间。</p>
+	<p>	3、从小提琴图的外形可以看到任意位置的数据密度，实际上就是旋转了90度的密度图。</p>
+	<p>	4、小提琴图越宽，表示密度越大。</p>
+	<p>	5、可以展示出数据的多个峰值。</p>
+	<hr >
+	散点极坐标图:
 	<div id="penguins3" class="penguins3"></div>
+	<p>	该散点极坐标图展现了各个岛屿不同企鹅之间的体长与体重分布图。从图中
+	可看出企鹅的体重居多分布在150以上，每个部分的体长的分布比较均匀
+	其中可看出不同岛屿的企鹅其体长及体重分布都比较均匀。</p>
+	<hr >
 	散点矩阵图：
 	<div id="penguins4" class="penguins4"></div>
+	<p>	该散点矩阵图将不同岛屿企鹅的体长、体重、喙长度、喙宽度各为一个坐标系
+	制图，通过其不同颜色的散点可直观的看出不同岛屿企鹅的体长与体重、喙长
+	度、宽度之间的关系。</p>
 </body>
 <script>
 	a = {{ graphJSON | safe }};

@@ -176,7 +176,7 @@ def penguins():
 		)
 def pu():
 	df = pd.read_csv(r"static/penguins.csv")
-	fig = px.bar_polar(df,r="flipper_length_mm",theta="body_mass_g",color="sex",template="plotly_dark"
+	fig = px.bar_polar(df,r="flipper_length_mm",theta="body_mass_g",color="sex",template="plotly"
 				  ,color_discrete_sequence=px.colors.sequential.Plasma_r)
 	graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 	return graphJSON
